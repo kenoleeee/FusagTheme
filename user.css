@@ -1,0 +1,82 @@
+:root {
+  --player-bar-height: 90px;
+  --main-gap: 10px;
+  --main-corner-radius: 10px;
+  --cover-border-radius: 8px;
+  --sidebar-width: 72px;
+  --sidebar-width-expanded: 280px;
+}
+
+/* General styles */
+body {
+  background-color: var(--spice-main);
+}
+
+/* Sidebar styling */
+.Root__nav-bar {
+  width: var(--sidebar-width) !important;
+  transition: width 0.3s ease;
+}
+
+.Root__nav-bar:hover {
+  width: var(--sidebar-width-expanded) !important;
+}
+
+.main-navBar-navBarLink {
+  min-width: unset !important;
+  width: 100% !important;
+  justify-content: flex-start;
+  padding-left: 15px;
+}
+
+.main-navBar-navBarLink span {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  margin-left: 12px;
+}
+
+.Root__nav-bar:hover .main-navBar-navBarLink span {
+  display: inline;
+  opacity: 1;
+}
+
+/* Icon-only view for collapsed sidebar */
+.Root__nav-bar:not(:hover) .main-navBar-navBarLink {
+  justify-content: center;
+  padding-left: 0;
+}
+
+/* Transparent elements */
+.main-view-container,
+.main-topBar-background,
+.main-nowPlayingBar-container,
+.Root__nav-bar {
+  background-color: rgba(14, 17, 17, 0.7) !important;
+  backdrop-filter: blur(10px);
+}
+
+/* Rest of the styles remain the same... */
+
+/* Additional styles for better visibility of text */
+.main-navBar-navBarLink span {
+  color: var(--spice-text);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.main-navBar-navBarLink:hover span {
+  color: var(--spice-button);
+}
+
+/* Playlist names in sidebar */
+.main-rootlist-rootlistItemLink span {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.Root__nav-bar:hover .main-rootlist-rootlistItemLink span {
+  display: inline;
+  opacity: 1;
+}
